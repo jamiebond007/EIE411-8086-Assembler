@@ -1,0 +1,74 @@
+<html>
+<head>
+	<title>AAA - ASCII Adjust for Add</title>
+</head>
+
+<body>
+
+	<h1>Code for AAA Mnemonic</h1>
+	<input id="value" type="text" onkeypress="balls();" />
+	<input id="convert" type="button" value="Show" onclick="show();"/>
+    <div id="message">
+    </div>
+	<p></p>
+	
+	<script type="text/javascript">
+	var key = document.getElementById("value");
+	function balls(){
+           if (event.keyCode == 13){
+               document.getElementById("convert").click();
+           }
+	}
+	function show(){
+	
+	var code = document.getElementById("value");   //assigning the text-box element in html to a variable
+	//alert(code.value);
+    var test = code.value; //assigning the value entered in the text-box element to a variable
+    var error = document.getElementById("message"); ////assigning text-area element n html to a variable
+    //alert(test);
+
+   
+        if (test=="AAA"||test=="aaa"){
+            
+            var binary = "00110111"; // a variable to store my binary value
+            var hex =  parseInt(binary, 2).toString(16); //converts the binary value to a hexadecimal value
+            
+            error.innerHTML ="Binary Value:" + binary +"<br/> Hex Value:" + hex;
+            
+        }
+        else {
+            error.innerHTML = "<h2>Input Error!!!</h2>"+"<br/>"+"Text area only accepts AAA as input."+"<br/>"+"Please enter appropriate code and ensure there are no spaces before or after the mnemonic.";
+             }
+	
+
+	
+	};
+
+	
+	
+	
+	
+	
+	
+	
+	
+	</script>
+    
+    <style>
+        #value{text-transform: uppercase;}
+        #message{ border: solid 2px transparent;
+                    height:100px;
+            text-transform: capitalize;
+            width:600px;
+                    }
+    
+    </style>
+    
+</body>
+
+
+
+
+
+
+</html>
